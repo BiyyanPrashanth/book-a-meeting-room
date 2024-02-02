@@ -1,0 +1,26 @@
+server:
+  port: 9000
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+  h2:
+    console.enabled: true
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+
+  mvc:
+    favicon:
+      enabled: true
+app:
+  maintenanceSlot: '9:00-9:15,13:00-13:15,17:00-17:15'
+  slotTime: 15
